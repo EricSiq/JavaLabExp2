@@ -3,9 +3,11 @@
 Overview
 This program provides a menu-based system to perform three different tasks:
 
-Separate Even & Odd Numbers
-Find Closest Neighboring Numbers
-Convert Array to ArrayList and Vice Versa
+1.Separate Even & Odd Numbers
+
+2.Find Closest Neighboring Numbers
+
+3.Convert Array to ArrayList and Vice Versa
 
 
 Files Included
