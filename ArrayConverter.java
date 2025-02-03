@@ -1,24 +1,29 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class ArrayConverter {
-    // Convert array to list
-    public ArrayList<Integer> convertArrayToList(int[] array) {
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int num : array) list.add(num);
-        return list;
-    }
-    
-    // Convert list to array
-    public int[] convertListToArray(ArrayList<Integer> list) {
-        return list.stream().mapToInt(i -> i).toArray();
-    }
+    public void convertArray() {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Read input size
+        System.out.print("Enter number of elements: ");
+        int n = scanner.nextInt();
+        
+        Integer[] array = new Integer[n];
 
-    // Execute method
-    public void execute(UserInputHandler inputHandler) {
-        int[] array = inputHandler.getNumbersFromUser(); // Get input
-        ArrayList<Integer> list = convertArrayToList(array); // Convert
-        System.out.println("ArrayList: " + list);
-        System.out.println("Array: " + Arrays.toString(convertListToArray(list)));
+        // Read array elements
+        System.out.println("Enter " + n + " numbers:");
+        for (int i = 0; i < n; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        // Convert to ArrayList
+        ArrayList<Integer> arrayList = new ArrayList<>(Arrays.asList(array));
+        System.out.println("Converted to ArrayList: " + arrayList);
+
+        // Convert back to Array
+        Integer[] newArray = arrayList.toArray(new Integer[0]);
+        System.out.println("Converted back to Array: " + Arrays.toString(newArray));
     }
 }
